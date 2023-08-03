@@ -25,11 +25,7 @@ const initI18next: initType = async (lng, ns) => {
   return i18nInstance;
 };
 
-export const useTranslation: translationType = async (
-  lng,
-  ns,
-  options = {}
-) => {
+export const translation: translationType = async (lng, ns, options = {}) => {
   const i18nextInstance = await initI18next(lng, ns);
   return {
     t: i18nextInstance.getFixedT(

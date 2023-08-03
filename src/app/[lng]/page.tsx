@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { useTranslation } from "../i18n";
+import { translation } from "../i18n";
 
 export default async function Page({ params: { lng } }) {
-  const { t, i18n } = await useTranslation(lng);
+  const { t, i18n } = await translation(lng);
   console.log(i18n);
   return (
     <>
