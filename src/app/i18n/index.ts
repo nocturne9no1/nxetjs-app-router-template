@@ -25,6 +25,8 @@ const initI18next: initType = async (lng, ns) => {
   return i18nInstance;
 };
 
+const cookieName = "i18next";
+
 export const translation: translationType = async (lng, ns, options = {}) => {
   const i18nextInstance = await initI18next(lng, ns);
   return {
