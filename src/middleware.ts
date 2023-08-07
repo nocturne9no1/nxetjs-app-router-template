@@ -3,12 +3,10 @@ import acceptLanguage from "accept-language";
 import { languages, fallbackLng } from "./app/i18n/settings";
 import { extractFirstLanguageCode } from "./utils/router";
 import { LangType } from "./types";
-import { dir } from "i18next";
 
 acceptLanguage.languages(languages);
 
 export const config = {
-  // matcher: '/:lng*'
   matcher: ["/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js).*)"],
 };
 
@@ -24,8 +22,9 @@ export async function middleware(req: any) {
   if (
     req.nextUrl.pathname.indexOf("icon") > -1 ||
     req.nextUrl.pathname.indexOf("chrome") > -1
-  )
+  ) {
     return NextResponse.next();
+  }
 
   const response = NextResponse.next();
   let lng;
