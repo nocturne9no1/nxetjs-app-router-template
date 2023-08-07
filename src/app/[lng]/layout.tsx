@@ -1,4 +1,3 @@
-import { dir } from "i18next";
 import { languages } from "../i18n/settings";
 import { ReactNode } from "react";
 
@@ -14,13 +13,7 @@ export async function generateStaticParams() {
 }
 
 const RootLayout = ({ children, params: { lng } }: Props) => {
-  return (
-    // <html lang={lng} dir={dir(lng)}>
-    //   <head />
-    // <body>{children}</body>
-    <div>{children}</div>
-    // </html>
-  );
+  return <div>{children}</div>;
 };
 
 export default RootLayout;

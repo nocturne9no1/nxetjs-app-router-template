@@ -1,12 +1,12 @@
 "use client";
 import { useRouter, usePathname } from "next/navigation";
+import { dir } from "i18next";
+import { setCookie } from "cookies-next";
+import { languages } from "@/app/i18n/settings";
 import {
   extractFirstLanguageCode,
   removeFirstLangSegment,
 } from "@/utils/router";
-import { languages } from "@/app/i18n/settings";
-import { setCookie } from "cookies-next";
-import { dir } from "i18next";
 
 const useLangChange = () => {
   const router = useRouter();
